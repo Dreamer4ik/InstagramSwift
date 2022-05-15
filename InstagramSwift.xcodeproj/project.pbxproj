@@ -7,23 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1664CBC625C0762494C59C6C /* Pods_InstagramSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F374B4182EB0520D74264F /* Pods_InstagramSwift.framework */; };
 		DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6024283152CD0039F24B /* AppDelegate.swift */; };
 		DFDB6027283152CD0039F24B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6026283152CD0039F24B /* SceneDelegate.swift */; };
-		DFDB6029283152CD0039F24B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6028283152CD0039F24B /* ViewController.swift */; };
-		DFDB602C283152CD0039F24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDB602A283152CD0039F24B /* Main.storyboard */; };
+		DFDB6029283152CD0039F24B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6028283152CD0039F24B /* HomeViewController.swift */; };
 		DFDB602E283152D00039F24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDB602D283152D00039F24B /* Assets.xcassets */; };
 		DFDB6031283152D00039F24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDB602F283152D00039F24B /* LaunchScreen.storyboard */; };
+		DFDB6040283157FA0039F24B /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB603F283157FA0039F24B /* ExploreViewController.swift */; };
+		DFDB60422831581D0039F24B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB60412831581D0039F24B /* CameraViewController.swift */; };
+		DFDB6044283158580039F24B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6043283158580039F24B /* NotificationsViewController.swift */; };
+		DFDB6046283158860039F24B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6045283158860039F24B /* ProfileViewController.swift */; };
+		DFDB6048283158C60039F24B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6047283158C60039F24B /* TabBarViewController.swift */; };
+		DFDB604B283159000039F24B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB604A283159000039F24B /* SignInViewController.swift */; };
+		DFDB604D283159180039F24B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB604C283159180039F24B /* SignUpViewController.swift */; };
+		DFDB604F2831594C0039F24B /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB604E2831594C0039F24B /* CaptionViewController.swift */; };
+		DFDB6052283159B10039F24B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6051283159B10039F24B /* ListViewController.swift */; };
+		DFDB6054283159C90039F24B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6053283159C90039F24B /* PostViewController.swift */; };
+		DFDB6056283159E10039F24B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6055283159E10039F24B /* SettingsViewController.swift */; };
+		DFDB605828315A2E0039F24B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605728315A2E0039F24B /* User.swift */; };
+		DFDB605A28315A3F0039F24B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605928315A3F0039F24B /* Post.swift */; };
+		DFDB605C28315A6C0039F24B /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605B28315A6C0039F24B /* Relationship.swift */; };
+		DFDB605E28315A8F0039F24B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605D28315A8F0039F24B /* Notification.swift */; };
+		DFDB606028315AC10039F24B /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605F28315AC10039F24B /* AuthManager.swift */; };
+		DFDB606228315AE80039F24B /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606128315AE80039F24B /* DatabaseManager.swift */; };
+		DFDB606428315B090039F24B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606328315B090039F24B /* StorageManager.swift */; };
+		DFDB606628315B310039F24B /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606528315B310039F24B /* AnalyticsManager.swift */; };
+		DFDB606828315B530039F24B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606728315B530039F24B /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		995D7D1151A0C37EAD63537C /* Pods-InstagramSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramSwift.release.xcconfig"; path = "Target Support Files/Pods-InstagramSwift/Pods-InstagramSwift.release.xcconfig"; sourceTree = "<group>"; };
+		A03B0A2D927FBE342EF4606E /* Pods-InstagramSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramSwift.debug.xcconfig"; path = "Target Support Files/Pods-InstagramSwift/Pods-InstagramSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		C7F374B4182EB0520D74264F /* Pods_InstagramSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDB6021283152CD0039F24B /* InstagramSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDB6024283152CD0039F24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDB6026283152CD0039F24B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DFDB6028283152CD0039F24B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DFDB602B283152CD0039F24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFDB6028283152CD0039F24B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DFDB602D283152D00039F24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFDB6030283152D00039F24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFDB6032283152D00039F24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFDB603F283157FA0039F24B /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		DFDB60412831581D0039F24B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		DFDB6043283158580039F24B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		DFDB6045283158860039F24B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DFDB6047283158C60039F24B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		DFDB604A283159000039F24B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DFDB604C283159180039F24B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DFDB604E2831594C0039F24B /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
+		DFDB6051283159B10039F24B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		DFDB6053283159C90039F24B /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		DFDB6055283159E10039F24B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DFDB605728315A2E0039F24B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DFDB605928315A3F0039F24B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DFDB605B28315A6C0039F24B /* Relationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
+		DFDB605D28315A8F0039F24B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		DFDB605F28315AC10039F24B /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		DFDB606128315AE80039F24B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		DFDB606328315B090039F24B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		DFDB606528315B310039F24B /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		DFDB606728315B530039F24B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +73,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1664CBC625C0762494C59C6C /* Pods_InstagramSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54F1E9099CD53E34AC290286 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A03B0A2D927FBE342EF4606E /* Pods-InstagramSwift.debug.xcconfig */,
+				995D7D1151A0C37EAD63537C /* Pods-InstagramSwift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DFDB6018283152CD0039F24B = {
 			isa = PBXGroup;
 			children = (
 				DFDB6023283152CD0039F24B /* InstagramSwift */,
 				DFDB6022283152CD0039F24B /* Products */,
+				54F1E9099CD53E34AC290286 /* Pods */,
+				E10B64D335768194E05D89BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +110,114 @@
 		DFDB6023283152CD0039F24B /* InstagramSwift */ = {
 			isa = PBXGroup;
 			children = (
-				DFDB6024283152CD0039F24B /* AppDelegate.swift */,
-				DFDB6026283152CD0039F24B /* SceneDelegate.swift */,
-				DFDB6028283152CD0039F24B /* ViewController.swift */,
-				DFDB602A283152CD0039F24B /* Main.storyboard */,
-				DFDB602D283152D00039F24B /* Assets.xcassets */,
-				DFDB602F283152D00039F24B /* LaunchScreen.storyboard */,
+				DFDB603D2831549D0039F24B /* Resources */,
+				DFDB603C283154910039F24B /* Managers */,
+				DFDB603B283154740039F24B /* ViewModels */,
+				DFDB603A2831546C0039F24B /* Models */,
+				DFDB6039283154520039F24B /* Views */,
+				DFDB6038283154470039F24B /* Controllers */,
 				DFDB6032283152D00039F24B /* Info.plist */,
 			);
 			path = InstagramSwift;
+			sourceTree = "<group>";
+		};
+		DFDB6038283154470039F24B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB6049283158DD0039F24B /* Other */,
+				DFDB603E283157AF0039F24B /* Core */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DFDB6039283154520039F24B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB602F283152D00039F24B /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DFDB603A2831546C0039F24B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB605728315A2E0039F24B /* User.swift */,
+				DFDB605928315A3F0039F24B /* Post.swift */,
+				DFDB605B28315A6C0039F24B /* Relationship.swift */,
+				DFDB605D28315A8F0039F24B /* Notification.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DFDB603B283154740039F24B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DFDB603C283154910039F24B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB605F28315AC10039F24B /* AuthManager.swift */,
+				DFDB606128315AE80039F24B /* DatabaseManager.swift */,
+				DFDB606328315B090039F24B /* StorageManager.swift */,
+				DFDB606528315B310039F24B /* AnalyticsManager.swift */,
+				DFDB606728315B530039F24B /* HapticsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DFDB603D2831549D0039F24B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB602D283152D00039F24B /* Assets.xcassets */,
+				DFDB6024283152CD0039F24B /* AppDelegate.swift */,
+				DFDB6026283152CD0039F24B /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DFDB603E283157AF0039F24B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB6028283152CD0039F24B /* HomeViewController.swift */,
+				DFDB603F283157FA0039F24B /* ExploreViewController.swift */,
+				DFDB60412831581D0039F24B /* CameraViewController.swift */,
+				DFDB6043283158580039F24B /* NotificationsViewController.swift */,
+				DFDB6045283158860039F24B /* ProfileViewController.swift */,
+				DFDB6047283158C60039F24B /* TabBarViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DFDB6049283158DD0039F24B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB6050283159640039F24B /* Auth */,
+				DFDB604E2831594C0039F24B /* CaptionViewController.swift */,
+				DFDB6051283159B10039F24B /* ListViewController.swift */,
+				DFDB6053283159C90039F24B /* PostViewController.swift */,
+				DFDB6055283159E10039F24B /* SettingsViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		DFDB6050283159640039F24B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				DFDB604A283159000039F24B /* SignInViewController.swift */,
+				DFDB604C283159180039F24B /* SignUpViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E10B64D335768194E05D89BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7F374B4182EB0520D74264F /* Pods_InstagramSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFDB6035283152D00039F24B /* Build configuration list for PBXNativeTarget "InstagramSwift" */;
 			buildPhases = (
+				347844796FBC3D18FB7F3477 /* [CP] Check Pods Manifest.lock */,
 				DFDB601D283152CD0039F24B /* Sources */,
 				DFDB601E283152CD0039F24B /* Frameworks */,
 				DFDB601F283152CD0039F24B /* Resources */,
+				0ABE5326C4CCB3C580A04304 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,18 +282,79 @@
 			files = (
 				DFDB6031283152D00039F24B /* LaunchScreen.storyboard in Resources */,
 				DFDB602E283152D00039F24B /* Assets.xcassets in Resources */,
-				DFDB602C283152CD0039F24B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ABE5326C4CCB3C580A04304 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstagramSwift/Pods-InstagramSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstagramSwift/Pods-InstagramSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstagramSwift/Pods-InstagramSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		347844796FBC3D18FB7F3477 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstagramSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFDB601D283152CD0039F24B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFDB6029283152CD0039F24B /* ViewController.swift in Sources */,
+				DFDB604F2831594C0039F24B /* CaptionViewController.swift in Sources */,
+				DFDB6048283158C60039F24B /* TabBarViewController.swift in Sources */,
+				DFDB605E28315A8F0039F24B /* Notification.swift in Sources */,
+				DFDB606428315B090039F24B /* StorageManager.swift in Sources */,
+				DFDB6052283159B10039F24B /* ListViewController.swift in Sources */,
+				DFDB6054283159C90039F24B /* PostViewController.swift in Sources */,
+				DFDB6040283157FA0039F24B /* ExploreViewController.swift in Sources */,
+				DFDB60422831581D0039F24B /* CameraViewController.swift in Sources */,
+				DFDB606628315B310039F24B /* AnalyticsManager.swift in Sources */,
+				DFDB6029283152CD0039F24B /* HomeViewController.swift in Sources */,
+				DFDB604D283159180039F24B /* SignUpViewController.swift in Sources */,
+				DFDB605828315A2E0039F24B /* User.swift in Sources */,
+				DFDB6044283158580039F24B /* NotificationsViewController.swift in Sources */,
+				DFDB6056283159E10039F24B /* SettingsViewController.swift in Sources */,
+				DFDB606228315AE80039F24B /* DatabaseManager.swift in Sources */,
+				DFDB605C28315A6C0039F24B /* Relationship.swift in Sources */,
+				DFDB605A28315A3F0039F24B /* Post.swift in Sources */,
+				DFDB606028315AC10039F24B /* AuthManager.swift in Sources */,
+				DFDB604B283159000039F24B /* SignInViewController.swift in Sources */,
+				DFDB6046283158860039F24B /* ProfileViewController.swift in Sources */,
+				DFDB606828315B530039F24B /* HapticsManager.swift in Sources */,
 				DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */,
 				DFDB6027283152CD0039F24B /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +363,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DFDB602A283152CD0039F24B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DFDB602B283152CD0039F24B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DFDB602F283152D00039F24B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +490,7 @@
 		};
 		DFDB6036283152D00039F24B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A03B0A2D927FBE342EF4606E /* Pods-InstagramSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,11 +499,12 @@
 				DEVELOPMENT_TEAM = UNQVQM5ZA2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,12 +514,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DFDB6037283152D00039F24B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 995D7D1151A0C37EAD63537C /* Pods-InstagramSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,11 +529,12 @@
 				DEVELOPMENT_TEAM = UNQVQM5ZA2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +544,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
