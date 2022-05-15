@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import FirebaseFirestore
+
+final class DatabaseManager {
+
+    public static let shared = DatabaseManager()
+
+    let database = Firestore.firestore()
+    
+    private init() {}
+
+}

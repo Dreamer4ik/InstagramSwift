@@ -33,6 +33,7 @@
 		DFDB606428315B090039F24B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606328315B090039F24B /* StorageManager.swift */; };
 		DFDB606628315B310039F24B /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606528315B310039F24B /* AnalyticsManager.swift */; };
 		DFDB606828315B530039F24B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606728315B530039F24B /* HapticsManager.swift */; };
+		DFDB606A28315E680039F24B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFDB606928315E680039F24B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		DFDB606328315B090039F24B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		DFDB606528315B310039F24B /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		DFDB606728315B530039F24B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		DFDB606928315E680039F24B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				DFDB602D283152D00039F24B /* Assets.xcassets */,
 				DFDB6024283152CD0039F24B /* AppDelegate.swift */,
 				DFDB6026283152CD0039F24B /* SceneDelegate.swift */,
+				DFDB606928315E680039F24B /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				DFDB6031283152D00039F24B /* LaunchScreen.storyboard in Resources */,
 				DFDB602E283152D00039F24B /* Assets.xcassets in Resources */,
+				DFDB606A28315E680039F24B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
