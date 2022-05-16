@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1664CBC625C0762494C59C6C /* Pods_InstagramSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F374B4182EB0520D74264F /* Pods_InstagramSwift.framework */; };
+		DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81902828323F24007E9902 /* SignInHeaderView.swift */; };
+		DF81902B28324116007E9902 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81902A28324116007E9902 /* Extensions.swift */; };
+		DF9C103A2832AC5A007D425B /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C10392832AC5A007D425B /* IGTextField.swift */; };
 		DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6024283152CD0039F24B /* AppDelegate.swift */; };
 		DFDB6027283152CD0039F24B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6026283152CD0039F24B /* SceneDelegate.swift */; };
 		DFDB6029283152CD0039F24B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6028283152CD0039F24B /* HomeViewController.swift */; };
@@ -40,6 +43,9 @@
 		995D7D1151A0C37EAD63537C /* Pods-InstagramSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramSwift.release.xcconfig"; path = "Target Support Files/Pods-InstagramSwift/Pods-InstagramSwift.release.xcconfig"; sourceTree = "<group>"; };
 		A03B0A2D927FBE342EF4606E /* Pods-InstagramSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramSwift.debug.xcconfig"; path = "Target Support Files/Pods-InstagramSwift/Pods-InstagramSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		C7F374B4182EB0520D74264F /* Pods_InstagramSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF81902828323F24007E9902 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
+		DF81902A28324116007E9902 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DF9C10392832AC5A007D425B /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
 		DFDB6021283152CD0039F24B /* InstagramSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDB6024283152CD0039F24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDB6026283152CD0039F24B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				DFDB602F283152D00039F24B /* LaunchScreen.storyboard */,
+				DF81902828323F24007E9902 /* SignInHeaderView.swift */,
+				DF9C10392832AC5A007D425B /* IGTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 				DFDB6024283152CD0039F24B /* AppDelegate.swift */,
 				DFDB6026283152CD0039F24B /* SceneDelegate.swift */,
 				DFDB606928315E680039F24B /* GoogleService-Info.plist */,
+				DF81902A28324116007E9902 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -351,12 +360,15 @@
 				DFDB604D283159180039F24B /* SignUpViewController.swift in Sources */,
 				DFDB605828315A2E0039F24B /* User.swift in Sources */,
 				DFDB6044283158580039F24B /* NotificationsViewController.swift in Sources */,
+				DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */,
 				DFDB6056283159E10039F24B /* SettingsViewController.swift in Sources */,
+				DF9C103A2832AC5A007D425B /* IGTextField.swift in Sources */,
 				DFDB606228315AE80039F24B /* DatabaseManager.swift in Sources */,
 				DFDB605C28315A6C0039F24B /* Relationship.swift in Sources */,
 				DFDB605A28315A3F0039F24B /* Post.swift in Sources */,
 				DFDB606028315AC10039F24B /* AuthManager.swift in Sources */,
 				DFDB604B283159000039F24B /* SignInViewController.swift in Sources */,
+				DF81902B28324116007E9902 /* Extensions.swift in Sources */,
 				DFDB6046283158860039F24B /* ProfileViewController.swift in Sources */,
 				DFDB606828315B530039F24B /* HapticsManager.swift in Sources */,
 				DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */,
