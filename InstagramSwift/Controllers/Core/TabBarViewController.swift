@@ -16,11 +16,21 @@ class TabBarViewController: UITabBarController {
     }
     
     private func configure() {
+        
+        guard let email = UserDefaults.standard.string(forKey: "email"),
+              let username = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
+        
+        let currentUser = User(
+            username: username,
+            email: email)
+        
         let vc1 = HomeViewController()
         let vc2 = ExploreViewController()
         let vc3 = CameraViewController()
         let vc4 = NotificationsViewController()
-        let vc5 = ProfileViewController()
+        let vc5 = ProfileViewController(user: currentUser)
         
         vc1.title = "Home"
         vc2.title = "Explore"
@@ -47,6 +57,12 @@ class TabBarViewController: UITabBarController {
         nav3.tabBarItem = UITabBarItem(title: "Camera", image: UIImage(systemName: "camera"), tag: 3)
         nav4.tabBarItem = UITabBarItem(title: "Notifications", image: UIImage(systemName: "bell"), tag: 4)
         nav5.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"), tag: 5)
+        
+        nav1.navigationBar.tintColor = .label
+        nav2.navigationBar.tintColor = .label
+        nav3.navigationBar.tintColor = .label
+        nav4.navigationBar.tintColor = .label
+        nav5.navigationBar.tintColor = .label
         
         nav1.navigationBar.prefersLargeTitles = true
 
