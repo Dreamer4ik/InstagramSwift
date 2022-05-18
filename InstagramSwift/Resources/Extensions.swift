@@ -33,3 +33,17 @@ extension UIView {
         return frame.size.width + frame.origin.x
     }
 }
+
+extension Encodable {
+    func asDictionary() -> [String: Any]? {
+        guard let data = try? JSONEncoder().encode(self) else {
+            return nil
+        }
+        let json = try? JSONSerialization.jsonObject(
+            with: data,
+            options: .allowFragments
+        ) as? [String:Any]
+        
+        return json
+    }
+}
