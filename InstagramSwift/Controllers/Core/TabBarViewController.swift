@@ -37,8 +37,6 @@ class TabBarViewController: UITabBarController {
         vc4.title = "Notifications"
         vc5.title = "Profile"
         
-        vc1.navigationItem.largeTitleDisplayMode = .always
-        
         let nav1 = UINavigationController(rootViewController: vc1)
         let nav2 = UINavigationController(rootViewController: vc2)
         let nav3 = UINavigationController(rootViewController: vc3)
@@ -63,9 +61,6 @@ class TabBarViewController: UITabBarController {
         nav3.navigationBar.tintColor = .label
         nav4.navigationBar.tintColor = .label
         nav5.navigationBar.tintColor = .label
-        
-        nav1.navigationBar.prefersLargeTitles = true
-
         
         setViewControllers([nav1, nav2, nav3, nav4, nav5], animated: false)
     }
