@@ -12,16 +12,7 @@ class HomeViewController: UIViewController {
     private var collectionView: UICollectionView?
     
     private var viewModels = [[HomeFeedCellType]]()
-    
-    let colors: [UIColor] = [
-        .red,
-        .green,
-        .blue,
-        .purple,
-        .systemPink,
-        .systemTeal
-    ]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,7 +86,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .actions(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -104,7 +94,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .likeCount(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -113,7 +102,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .caption(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -122,7 +110,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         case .timestamp(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -131,7 +118,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 fatalError()
             }
             cell.configure(with: viewModel)
-            cell.contentView.backgroundColor = colors[indexPath.row]
             return cell
         }
     }
