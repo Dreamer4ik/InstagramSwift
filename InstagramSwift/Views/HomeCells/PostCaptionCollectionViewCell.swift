@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol PostCaptionCollectionViewCellDelegate: AnyObject {
+    func postCaptionCollectionViewCellDidTapCaption(_ cell: PostCaptionCollectionViewCell)
+}
+
 class PostCaptionCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "PostCaptionCollectionViewCell"
+    weak var delegate: PostCaptionCollectionViewCellDelegate?
     
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
         return label
     }()
     
@@ -22,10 +28,16 @@ class PostCaptionCollectionViewCell: UICollectionViewCell {
         contentView.clipsToBounds = true
         contentView.backgroundColor = .systemBackground
         contentView.addSubview(label)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapCaption))
+        label.addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func didTapCaption() {
+        delegate?.postCaptionCollectionViewCellDidTapCaption(self)
     }
     
     override func layoutSubviews() {

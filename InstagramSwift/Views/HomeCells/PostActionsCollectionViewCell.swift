@@ -7,9 +7,18 @@
 
 import UIKit
 
+protocol PostActionsCollectionViewCellDelegate: AnyObject {
+    func postActionsCollectionViewCellDidTapLike(_ cell: PostActionsCollectionViewCell, isLiked: Bool)
+    func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell)
+    func postActionsCollectionViewCellDidTapShare(_ cell: PostActionsCollectionViewCell)
+}
+
 class PostActionsCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "PostActionsCollectionViewCell"
+    weak var delegate: PostActionsCollectionViewCellDelegate?
+    
+    private var isLiked = false
     
     private let likeButton: UIButton = {
         let button = UIButton()
@@ -57,15 +66,29 @@ class PostActionsCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func didTapLike() {
+        if self.isLiked {
+            let image = UIImage(systemName: "suit.heart",
+                                withConfiguration: UIImage.SymbolConfiguration(pointSize: 44))
+            likeButton.setImage(image, for: .normal)
+            likeButton.tintColor = .label
+        }
+        else {
+            let image = UIImage(systemName: "suit.heart.fill",
+                                withConfiguration: UIImage.SymbolConfiguration(pointSize: 44))
+            likeButton.setImage(image, for: .normal)
+            likeButton.tintColor = .systemRed
+        }
         
+        delegate?.postActionsCollectionViewCellDidTapLike(self, isLiked: !isLiked)
+        self.isLiked = !isLiked
     }
     
     @objc func didTapComment() {
-        
+        delegate?.postActionsCollectionViewCellDidTapComment(self)
     }
     
     @objc func didTapShare() {
-        
+        delegate?.postActionsCollectionViewCellDidTapShare(self)
     }
     
     override func layoutSubviews() {
@@ -81,6 +104,7 @@ class PostActionsCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: PostActionsCollectionViewCellViewModel) {
+        isLiked = viewModel.isLiked
         if viewModel.isLiked {
             let image = UIImage(systemName: "suit.heart.fill",
                                 withConfiguration: UIImage.SymbolConfiguration(pointSize: 44))
