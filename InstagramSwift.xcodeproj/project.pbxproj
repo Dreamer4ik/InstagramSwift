@@ -19,6 +19,7 @@
 		DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81902828323F24007E9902 /* SignInHeaderView.swift */; };
 		DF81902B28324116007E9902 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81902A28324116007E9902 /* Extensions.swift */; };
 		DF9C103A2832AC5A007D425B /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C10392832AC5A007D425B /* IGTextField.swift */; };
+		DFB2E102283BDDE200BF0B72 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB2E101283BDDE200BF0B72 /* PhotoCollectionViewCell.swift */; };
 		DFB7E13E2837F4F00089F48C /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E13D2837F4F00089F48C /* PosterCollectionViewCell.swift */; };
 		DFB7E1402837F61F0089F48C /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E13F2837F61F0089F48C /* PostCollectionViewCell.swift */; };
 		DFB7E1422837F6740089F48C /* PostActionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E1412837F6740089F48C /* PostActionsCollectionViewCell.swift */; };
@@ -68,6 +69,7 @@
 		DF81902828323F24007E9902 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
 		DF81902A28324116007E9902 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DF9C10392832AC5A007D425B /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
+		DFB2E101283BDDE200BF0B72 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFB7E13D2837F4F00089F48C /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFB7E13F2837F61F0089F48C /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFB7E1412837F6740089F48C /* PostActionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				DFDB602F283152D00039F24B /* LaunchScreen.storyboard */,
 				DF81902828323F24007E9902 /* SignInHeaderView.swift */,
 				DF9C10392832AC5A007D425B /* IGTextField.swift */,
+				DFB2E101283BDDE200BF0B72 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				DF20D4F5283785F1000208C7 /* HomeFeedCellType.swift in Sources */,
 				DFB7E1482837F7130089F48C /* PostDateTimeCollectionViewCell.swift in Sources */,
 				DFDB6046283158860039F24B /* ProfileViewController.swift in Sources */,
+				DFB2E102283BDDE200BF0B72 /* PhotoCollectionViewCell.swift in Sources */,
 				DFDB606828315B530039F24B /* HapticsManager.swift in Sources */,
 				DFB7E13E2837F4F00089F48C /* PosterCollectionViewCell.swift in Sources */,
 				DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */,
