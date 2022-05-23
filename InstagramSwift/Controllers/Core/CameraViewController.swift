@@ -116,7 +116,7 @@ class CameraViewController: UIViewController {
             }
             
             if captureSession.canAddOutput(output) {
-                captureSession.canAddOutput(output)
+                captureSession.addOutput(output)
             }
             
             // Layer
@@ -146,11 +146,19 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         }
         
         captureSession?.stopRunning()
+        
+        guard let resizedImage = image.sd_resizedImage(
+            with: CGSize(width: 640, height: 640),
+            scaleMode: .aspectFill
+        ) else {
+            return
+        }
 
-        let vc = PostEditViewController(image: image)
+        let vc = PostEditViewController(image: resizedImage)
         if #available(iOS 14.0, *) {
             vc.navigationItem.backButtonDisplayMode = .minimal
         }
         navigationController?.pushViewController(vc, animated: false)
     }
+
 }

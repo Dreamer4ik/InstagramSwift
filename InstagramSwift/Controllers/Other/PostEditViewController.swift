@@ -51,7 +51,7 @@ class PostEditViewController: UIViewController {
         imageView.image = image
         view.addSubview(imageView)
         view.addSubview(collectionView)
-        
+        setUpFilters()
         collectionView.delegate = self
         collectionView.dataSource = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(didTapNext))
@@ -75,7 +75,10 @@ class PostEditViewController: UIViewController {
     }
     
     @objc private func didTapNext() {
-        let vc = CaptionViewController(image: image)
+        guard let currentImage = imageView.image else {
+            return
+        }
+        let vc = CaptionViewController(image: currentImage)
         vc.title = "Add Caption"
         navigationController?.pushViewController(vc, animated: true)
     }
