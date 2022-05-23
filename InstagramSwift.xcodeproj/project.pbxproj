@@ -577,6 +577,7 @@
 				INFOPLIST_FILE = InstagramSwift/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take profile picture.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to take videos.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to choose a profile picture.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -609,6 +610,7 @@
 				INFOPLIST_FILE = InstagramSwift/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Instagram;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take profile picture.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow access to take videos.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to choose a profile picture.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
