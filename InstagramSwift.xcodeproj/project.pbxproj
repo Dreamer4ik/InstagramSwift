@@ -15,6 +15,7 @@
 		DF20D4F128378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D4F028378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift */; };
 		DF20D4F3283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */; };
 		DF20D4F5283785F1000208C7 /* HomeFeedCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */; };
+		DF3568F1283B868100F243AC /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3568F0283B868100F243AC /* PostEditViewController.swift */; };
 		DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81902828323F24007E9902 /* SignInHeaderView.swift */; };
 		DF81902B28324116007E9902 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81902A28324116007E9902 /* Extensions.swift */; };
 		DF9C103A2832AC5A007D425B /* IGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9C10392832AC5A007D425B /* IGTextField.swift */; };
@@ -63,6 +64,7 @@
 		DF20D4F028378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDatetimeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCellType.swift; sourceTree = "<group>"; };
+		DF3568F0283B868100F243AC /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
 		DF81902828323F24007E9902 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
 		DF81902A28324116007E9902 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DF9C10392832AC5A007D425B /* IGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGTextField.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				DFDB6051283159B10039F24B /* ListViewController.swift */,
 				DFDB6053283159C90039F24B /* PostViewController.swift */,
 				DFDB6055283159E10039F24B /* SettingsViewController.swift */,
+				DF3568F0283B868100F243AC /* PostEditViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				DFDB605C28315A6C0039F24B /* Relationship.swift in Sources */,
 				DFDB605A28315A3F0039F24B /* Post.swift in Sources */,
 				DF20D4F128378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
+				DF3568F1283B868100F243AC /* PostEditViewController.swift in Sources */,
 				DFDB606028315AC10039F24B /* AuthManager.swift in Sources */,
 				DFDB604B283159000039F24B /* SignInViewController.swift in Sources */,
 				DF81902B28324116007E9902 /* Extensions.swift in Sources */,
