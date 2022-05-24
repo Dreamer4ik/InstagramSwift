@@ -12,9 +12,25 @@ final class DatabaseManager {
     
     public static let shared = DatabaseManager()
     
-    let database = Firestore.firestore()
+    private let database = Firestore.firestore()
         
     private init() {}
+    
+    public func posts(for username: String,  completion: @escaping (Result<[Post], Error>) -> Void) {
+        let ref = database.collection("users")
+            .document(username)
+            .collection("posts")
+        ref.getDocuments { snapshot, error in
+            guard let posts = snapshot?.documents.compactMap({
+                Post(with: $0.data())
+            }),
+            error == nil else {
+                return
+            }
+            
+            completion(.success(posts))
+        }
+    }
     
     public func findUser(with email: String, completion: @escaping (User?) -> Void) {
         let ref = database.collection("users")
@@ -30,6 +46,21 @@ final class DatabaseManager {
                 $0.email == email
             })
             completion(user)
+        }
+    }
+    
+    public func createPost(newPost: Post, completion: @escaping (Bool) -> Void) {
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            completion(false)
+            return
+        }
+        let reference = database.document("users/\(username)/posts/\(newPost.id)")
+        guard let data = newPost.asDictionary() else {
+            completion(false)
+            return
+        }
+        reference.setData(data) { error in
+            completion(error == nil)
         }
     }
     

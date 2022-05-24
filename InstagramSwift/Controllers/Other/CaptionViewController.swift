@@ -58,7 +58,50 @@ class CaptionViewController: UIViewController, UITextViewDelegate {
             caption = ""
         }
         
-        // Upload photo, update database
+        // Generate Post ID
+        guard let newPostId = createNewPostID() else {
+            return
+        }
+        // Upload Post
+        StorageManager.shared.uploadPost(
+            data: image.pngData(),
+            id: newPostId
+        ) { newPostDownloadURL in
+            guard let url = newPostDownloadURL else {
+                print("Error: failed to upload")
+                return
+            }
+            // New Post
+            let newPost = Post(
+                id: newPostId,
+                caption: caption,
+                postedDate: .date(with: Date()),
+                postUrlString: url.absoluteString,
+                likers: []
+            )
+            // Update Database
+            DatabaseManager.shared.createPost(newPost: newPost) { [weak self] finished in
+                guard finished else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self?.tabBarController?.tabBar.isHidden = false
+                    self?.tabBarController?.selectedIndex = 0
+                    self?.navigationController?.popToRootViewController(animated: false)
+                }
+            }
+        }
+       
+    }
+    
+    private func createNewPostID() -> String? {
+        let timeStamp = Date().timeIntervalSince1970
+        let randomNumber = Int.random(in: 0...10000)
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return nil
+        }
+        
+        return "\(username)_\(randomNumber)_\(timeStamp)"
     }
     
     override func viewDidLayoutSubviews() {

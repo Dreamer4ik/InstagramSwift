@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
         
         configureCollectionView()
         fetchPosts()
+//        createMockData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -28,32 +29,70 @@ class HomeViewController: UIViewController {
     }
     
     private func fetchPosts() {
-        // mock data
-        let postData: [HomeFeedCellType] = [
-            .poster(viewModel: PosterCollectionViewCellViewModel(
-                username: "dreamer",
-                profilePictureURL: URL(string: "https://images.pexels.com/photos/2245436/pexels-photo-2245436.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")!
-            )),
-            .post(viewModel: PostCollectionViewCellViewModel(
-                postURL: URL(string: "https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")!
-            )),
-            .actions(viewModel: PostActionsCollectionViewCellViewModel(
-                isLiked: true
-            )),
-            .likeCount(viewModel: PostLikesCollectionViewCellViewModel(
-                likers: ["potus"]
-            )),
-            .caption(viewModel: PostCaptionCollectionViewCellViewModel(
-                username: "dreamer",
-                caption: "First post"
-            )),
-            .timestamp(viewModel: PostDatetimeCollectionViewCellViewModel(
-                date: Date()
-            ))
-        ]
-        
-        viewModels.append(postData)
-        collectionView?.reloadData()
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
+        DatabaseManager.shared.posts(for: username) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let posts):
+                    let group = DispatchGroup()
+                    
+                    posts.forEach({ model in
+                        group.enter()
+                        self?.createViewModel(model: model, username: username, completion: { success in
+                            defer {
+                                group.leave()
+                            }
+                            if !success {
+                                print("failed to create VM")
+                            }
+                        })
+                    })
+                    group.notify(queue: .main) {
+                        self?.collectionView?.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    private func createViewModel(model: Post, username: String ,completion: @escaping (Bool) -> Void) {
+    
+            StorageManager.shared.profilePictureURL(for: username) { [weak self] profilePictureURL in
+                guard let postURL = URL(string: model.postUrlString),
+                      let profilePictureURL = profilePictureURL else {
+                    return
+                }
+                
+                let postData: [HomeFeedCellType] = [
+                    .poster(viewModel: PosterCollectionViewCellViewModel(
+                        username: username,
+                        profilePictureURL: profilePictureURL
+                    )),
+                    .post(viewModel: PostCollectionViewCellViewModel(
+                        postURL: postURL
+                    )),
+                    .actions(viewModel: PostActionsCollectionViewCellViewModel(
+                        isLiked: false
+                    )),
+                    .likeCount(viewModel: PostLikesCollectionViewCellViewModel(
+                        likers: []
+                    )),
+                    .caption(viewModel: PostCaptionCollectionViewCellViewModel(
+                        username: username,
+                        caption: model.caption
+                    )),
+                    .timestamp(viewModel: PostDatetimeCollectionViewCellViewModel(
+                        date: DateFormatter.defaultFormatter.date(from: model.postedDate) ?? Date()
+                    ))
+                ]
+                
+                self?.viewModels.append(postData)
+                completion(true)
+            }
     }
     
 }
