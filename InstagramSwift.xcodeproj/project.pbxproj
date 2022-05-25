@@ -26,6 +26,7 @@
 		DFB7E1442837F6A20089F48C /* PostLikesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E1432837F6A20089F48C /* PostLikesCollectionViewCell.swift */; };
 		DFB7E1462837F6C90089F48C /* PostCaptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E1452837F6C90089F48C /* PostCaptionCollectionViewCell.swift */; };
 		DFB7E1482837F7130089F48C /* PostDateTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E1472837F7130089F48C /* PostDateTimeCollectionViewCell.swift */; };
+		DFCF96EF283EA2EC00AF437A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF96EE283EA2EC00AF437A /* SearchResultsViewController.swift */; };
 		DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6024283152CD0039F24B /* AppDelegate.swift */; };
 		DFDB6027283152CD0039F24B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6026283152CD0039F24B /* SceneDelegate.swift */; };
 		DFDB6029283152CD0039F24B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6028283152CD0039F24B /* HomeViewController.swift */; };
@@ -76,6 +77,7 @@
 		DFB7E1432837F6A20089F48C /* PostLikesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLikesCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFB7E1452837F6C90089F48C /* PostCaptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFB7E1472837F7130089F48C /* PostDateTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDateTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFCF96EE283EA2EC00AF437A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		DFDB6021283152CD0039F24B /* InstagramSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDB6024283152CD0039F24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDB6026283152CD0039F24B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				DFDB6053283159C90039F24B /* PostViewController.swift */,
 				DFDB6055283159E10039F24B /* SettingsViewController.swift */,
 				DF3568F0283B868100F243AC /* PostEditViewController.swift */,
+				DFCF96EE283EA2EC00AF437A /* SearchResultsViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				DFDB6044283158580039F24B /* NotificationsViewController.swift in Sources */,
 				DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */,
 				DFDB6056283159E10039F24B /* SettingsViewController.swift in Sources */,
+				DFCF96EF283EA2EC00AF437A /* SearchResultsViewController.swift in Sources */,
 				DF9C103A2832AC5A007D425B /* IGTextField.swift in Sources */,
 				DF20D4E92837825D000208C7 /* PostCollectionViewCellViewModel.swift in Sources */,
 				DF20D4EF283783C2000208C7 /* PostLikesCollectionViewCellViewModel.swift in Sources */,

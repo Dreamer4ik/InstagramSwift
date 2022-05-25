@@ -16,7 +16,7 @@ protocol PosterCollectionViewCellDelegate: AnyObject {
 final class PosterCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "PosterCollectionViewCell"
-    weak var delegate:PosterCollectionViewCellDelegate?
+    weak var delegate: PosterCollectionViewCellDelegate?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()

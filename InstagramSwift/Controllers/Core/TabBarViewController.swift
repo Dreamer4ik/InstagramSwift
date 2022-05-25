@@ -33,7 +33,6 @@ class TabBarViewController: UITabBarController {
         let vc5 = ProfileViewController(user: currentUser)
         
         vc1.title = "Home"
-        vc2.title = "Explore"
         vc4.title = "Notifications"
         vc5.title = "Profile"
         
