@@ -203,9 +203,9 @@ extension HomeViewController: PostActionsCollectionViewCellDelegate {
     }
     
     func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell) {
-        let vc = PostViewController()
-        vc.title = "Post"
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = PostViewController()
+//        vc.title = "Post"
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     func postActionsCollectionViewCellDidTapShare(_ cell: PostActionsCollectionViewCell) {
