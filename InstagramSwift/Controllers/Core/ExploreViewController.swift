@@ -11,6 +11,73 @@ class ExploreViewController: UIViewController {
 
     private let searchVC = UISearchController(searchResultsController: SearchResultsViewController())
     
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewCompositionalLayout { index, _ -> NSCollectionLayoutSection? in
+            let item = NSCollectionLayoutItem(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.5),
+                    heightDimension: .fractionalHeight(1)
+                ))
+            
+            let fullItem = NSCollectionLayoutItem(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalHeight(1)
+                ))
+            
+            let tripletItem = NSCollectionLayoutItem(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.33),
+                    heightDimension: .fractionalHeight(1)
+                ))
+            
+            let verticalGroup = NSCollectionLayoutGroup.vertical(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.5),
+                    heightDimension: .fractionalHeight(1)
+                ),
+                subitem: fullItem,
+                count: 2)
+            
+            let horizontalGroup = NSCollectionLayoutGroup.horizontal(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .absolute(160)
+                ),
+                subitems: [
+                    item,
+                    verticalGroup
+                ])
+            
+            let threeItemGroup = NSCollectionLayoutGroup.horizontal(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .absolute(160)
+                ),
+                subitem: tripletItem,
+                count: 3)
+            
+            let finalGroup = NSCollectionLayoutGroup.vertical(
+                layoutSize: NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .absolute(320)
+                ),
+                subitems: [
+                    horizontalGroup,
+                    threeItemGroup
+                ])
+            
+            return NSCollectionLayoutSection(group: finalGroup)
+        }
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(PhotoCollectionViewCell.self,
+                                forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+        return collectionView
+    }()
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +86,15 @@ class ExploreViewController: UIViewController {
         searchVC.searchBar.placeholder = "Search..."
         searchVC.searchResultsUpdater = self
         navigationItem.searchController = searchVC
+        view.addSubview(collectionView)
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
+    }
 
 }
 
@@ -48,3 +122,20 @@ extension ExploreViewController: SearchResultsViewControllerDelegate {
     
 }
 
+extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: PhotoCollectionViewCell.identifier,
+            for: indexPath
+        ) as? PhotoCollectionViewCell else {
+            fatalError()
+        }
+        cell.configure(with: UIImage(named: "test"))
+        return cell
+    }
+    
+}
