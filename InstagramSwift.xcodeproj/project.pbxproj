@@ -27,6 +27,10 @@
 		DFB7E1462837F6C90089F48C /* PostCaptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E1452837F6C90089F48C /* PostCaptionCollectionViewCell.swift */; };
 		DFB7E1482837F7130089F48C /* PostDateTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB7E1472837F7130089F48C /* PostDateTimeCollectionViewCell.swift */; };
 		DFCF96EF283EA2EC00AF437A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF96EE283EA2EC00AF437A /* SearchResultsViewController.swift */; };
+		DFD9FA95283FF61900ED7301 /* FollowNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9FA94283FF61900ED7301 /* FollowNotificationTableViewCell.swift */; };
+		DFD9FA97283FF63600ED7301 /* LikeNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9FA96283FF63600ED7301 /* LikeNotificationTableViewCell.swift */; };
+		DFD9FA99283FF68D00ED7301 /* CommentNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9FA98283FF68D00ED7301 /* CommentNotificationTableViewCell.swift */; };
+		DFD9FA9B283FF82900ED7301 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9FA9A283FF82900ED7301 /* NotificationsManager.swift */; };
 		DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6024283152CD0039F24B /* AppDelegate.swift */; };
 		DFDB6027283152CD0039F24B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6026283152CD0039F24B /* SceneDelegate.swift */; };
 		DFDB6029283152CD0039F24B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6028283152CD0039F24B /* HomeViewController.swift */; };
@@ -78,6 +82,10 @@
 		DFB7E1452837F6C90089F48C /* PostCaptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCaptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFB7E1472837F7130089F48C /* PostDateTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDateTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFCF96EE283EA2EC00AF437A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		DFD9FA94283FF61900ED7301 /* FollowNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		DFD9FA96283FF63600ED7301 /* LikeNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		DFD9FA98283FF68D00ED7301 /* CommentNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		DFD9FA9A283FF82900ED7301 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		DFDB6021283152CD0039F24B /* InstagramSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDB6024283152CD0039F24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDB6026283152CD0039F24B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +150,16 @@
 			path = HomeCells;
 			sourceTree = "<group>";
 		};
+		DFD9FA93283FF5CB00ED7301 /* NotificationCells */ = {
+			isa = PBXGroup;
+			children = (
+				DFD9FA94283FF61900ED7301 /* FollowNotificationTableViewCell.swift */,
+				DFD9FA96283FF63600ED7301 /* LikeNotificationTableViewCell.swift */,
+				DFD9FA98283FF68D00ED7301 /* CommentNotificationTableViewCell.swift */,
+			);
+			path = NotificationCells;
+			sourceTree = "<group>";
+		};
 		DFDB6018283152CD0039F24B = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +204,7 @@
 		DFDB6039283154520039F24B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DFD9FA93283FF5CB00ED7301 /* NotificationCells */,
 				DFB7E13C2837F4BA0089F48C /* HomeCells */,
 				DFDB602F283152D00039F24B /* LaunchScreen.storyboard */,
 				DF81902828323F24007E9902 /* SignInHeaderView.swift */,
@@ -228,6 +247,7 @@
 				DFDB606328315B090039F24B /* StorageManager.swift */,
 				DFDB606528315B310039F24B /* AnalyticsManager.swift */,
 				DFDB606728315B530039F24B /* HapticsManager.swift */,
+				DFD9FA9A283FF82900ED7301 /* NotificationsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -407,8 +427,11 @@
 				DFB7E1442837F6A20089F48C /* PostLikesCollectionViewCell.swift in Sources */,
 				DFDB6048283158C60039F24B /* TabBarViewController.swift in Sources */,
 				DFDB605E28315A8F0039F24B /* Notification.swift in Sources */,
+				DFD9FA9B283FF82900ED7301 /* NotificationsManager.swift in Sources */,
 				DFDB606428315B090039F24B /* StorageManager.swift in Sources */,
 				DFDB6052283159B10039F24B /* ListViewController.swift in Sources */,
+				DFD9FA95283FF61900ED7301 /* FollowNotificationTableViewCell.swift in Sources */,
+				DFD9FA99283FF68D00ED7301 /* CommentNotificationTableViewCell.swift in Sources */,
 				DFB7E1402837F61F0089F48C /* PostCollectionViewCell.swift in Sources */,
 				DFDB6054283159C90039F24B /* PostViewController.swift in Sources */,
 				DFDB6040283157FA0039F24B /* ExploreViewController.swift in Sources */,
@@ -431,6 +454,7 @@
 				DFDB605A28315A3F0039F24B /* Post.swift in Sources */,
 				DF20D4F128378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
 				DF3568F1283B868100F243AC /* PostEditViewController.swift in Sources */,
+				DFD9FA97283FF63600ED7301 /* LikeNotificationTableViewCell.swift in Sources */,
 				DFDB606028315AC10039F24B /* AuthManager.swift in Sources */,
 				DFDB604B283159000039F24B /* SignInViewController.swift in Sources */,
 				DF81902B28324116007E9902 /* Extensions.swift in Sources */,
