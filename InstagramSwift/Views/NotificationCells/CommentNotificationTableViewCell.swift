@@ -7,8 +7,17 @@
 
 import UIKit
 
+protocol CommentNotificationTableViewCellDelegate: AnyObject {
+    func commentNotificationTableViewCell(_ cell: CommentNotificationTableViewCell,
+                                          didTapPostWith viewModel: CommentNotificationCellViewModel)
+}
+
 class CommentNotificationTableViewCell: UITableViewCell {
     static let identifier = "CommentNotificationTableViewCell"
+    
+    weak var delegate: CommentNotificationTableViewCellDelegate?
+    
+    private var viewModel: CommentNotificationCellViewModel?
     
     private let profilePictureImageView: UIImageView = {
         let imageView = UIImageView()
@@ -31,19 +40,31 @@ class CommentNotificationTableViewCell: UITableViewCell {
         label.textAlignment = .left
         return label
     }()
-    
+        
     //MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         clipsToBounds = true
         contentView.addSubview(profilePictureImageView)
         contentView.addSubview(label)
         contentView.addSubview(postImageView)
+        
+        postImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapPost))
+        postImageView.addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func didTapPost() {
+        guard let vm = viewModel else {
+            return
+        }
+        delegate?.commentNotificationTableViewCell(self, didTapPostWith: vm)
     }
     
     override func layoutSubviews() {
@@ -89,6 +110,7 @@ class CommentNotificationTableViewCell: UITableViewCell {
     }
     
     public func configure(with viewModel: CommentNotificationCellViewModel) {
+        self.viewModel = viewModel
         label.text = viewModel.username + " commented on your post."
         profilePictureImageView.sd_setImage(with: viewModel.profilePictureURL, completed: nil)
         postImageView.sd_setImage(with: viewModel.postURL, completed: nil)

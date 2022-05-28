@@ -7,8 +7,17 @@
 
 import UIKit
 
+protocol LikeNotificationTableViewCellDelegate: AnyObject {
+    func likeNotificationTableViewCell(_ cell: LikeNotificationTableViewCell,
+                                       didTapPostWith viewModel: LikeNotificationCellViewModel)
+}
+
 class LikeNotificationTableViewCell: UITableViewCell {
     static let identifier = "LikeNotificationTableViewCell"
+    
+    weak var delegate: LikeNotificationTableViewCellDelegate?
+    
+    private var viewModel: LikeNotificationCellViewModel?
     
     private let profilePictureImageView: UIImageView = {
         let imageView = UIImageView()
@@ -36,14 +45,26 @@ class LikeNotificationTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         clipsToBounds = true
         contentView.addSubview(profilePictureImageView)
         contentView.addSubview(label)
         contentView.addSubview(postImageView)
+        
+        postImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapPost))
+        postImageView.addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func didTapPost() {
+        guard let vm = viewModel else {
+            return
+        }
+        delegate?.likeNotificationTableViewCell(self, didTapPostWith: vm)
     }
     
     override func layoutSubviews() {
@@ -89,6 +110,7 @@ class LikeNotificationTableViewCell: UITableViewCell {
     }
     
     public func configure(with viewModel: LikeNotificationCellViewModel) {
+        self.viewModel = viewModel
         label.text = viewModel.username + " liked your post."
         profilePictureImageView.sd_setImage(with: viewModel.profilePictureURL, completed: nil)
         postImageView.sd_setImage(with: viewModel.postURL, completed: nil)
