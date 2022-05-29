@@ -13,7 +13,7 @@ final class DatabaseManager {
     public static let shared = DatabaseManager()
     
     private let database = Firestore.firestore()
-        
+    
     private init() {}
     
     public func findUsers(with usernamePrefix: String, completion: @escaping ([User]) -> Void) {
@@ -41,7 +41,7 @@ final class DatabaseManager {
             guard let posts = snapshot?.documents.compactMap({
                 Post(with: $0.data())
             }),
-            error == nil else {
+                  error == nil else {
                 return
             }
             
@@ -58,7 +58,7 @@ final class DatabaseManager {
                 completion(nil)
                 return
             }
-               
+            
             let user = users.first(where: {
                 $0.email == email
             })
@@ -119,11 +119,40 @@ final class DatabaseManager {
                         return
                     }
                     aggregatePosts.append(contentsOf: posts)
-            }
+                }
             })
             group.notify(queue: .main) {
                 completion(aggregatePosts)
             }
+        }
     }
+    
+    
+    public func getAllNotifications(completion: @escaping ([IGNotification]) -> Void) {
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            completion([])
+            return
+        }
+        
+        let ref = database.collection("users").document(username).collection("notifications")
+        ref.getDocuments { snapshot, error in
+            guard let notifications = snapshot?.documents.compactMap({
+                IGNotification(with: $0.data())
+            }),
+                  error == nil else {
+                completion([])
+                return
+            }
+            
+            completion(notifications)
+        }
+    }
+    
+    public func insertNotification(identifier: String, data: [String:Any], for username: String) {
+        let ref = database.collection("users")
+            .document(username)
+            .collection("notifications")
+            .document(identifier)
+        ref.setData(data)
     }
 }

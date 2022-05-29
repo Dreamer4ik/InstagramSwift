@@ -36,10 +36,10 @@ class NotificationsViewController: UIViewController {
     private var models: [IGNotification] = []
     
     //MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         view.addSubview(noActivityLabel)
@@ -56,7 +56,78 @@ class NotificationsViewController: UIViewController {
     }
     
     private func fetchNotifications() {
-        mockData()
+        NotificationsManager.shared.getNotifications { [weak self] models in
+            DispatchQueue.main.async {
+                self?.models = models
+                self?.createViewModels()
+            }
+        }
+    }
+    
+    private func createViewModels() {
+        models.forEach({ model in
+            guard let type = NotificationsManager.IGType(rawValue: model.notificationType) else {
+                return
+            }
+            let username = model.username
+            guard let profilePictureUrl = URL(string: model.profilePictureUrl) else {
+                return
+            }
+            
+            // Derive
+            
+            switch type {
+            case .like:
+                guard let postUrl = URL(string: model.postUrl ?? "") else {
+                    return
+                }
+                viewModels.append(
+                    .like(
+                        viewModel: LikeNotificationCellViewModel(
+                            username: username,
+                            profilePictureURL: profilePictureUrl,
+                            postURL: postUrl
+                        )
+                    )
+                )
+            case .comment:
+                guard let postUrl = URL(string: model.postUrl ?? "") else {
+                    return
+                }
+                viewModels.append(
+                    .comment(
+                        viewModel: CommentNotificationCellViewModel(
+                            username: username,
+                            profilePictureURL: profilePictureUrl,
+                            postURL: postUrl
+                        )
+                    )
+                )
+            case .follow:
+                guard let isFollowing = model.isFollowing else {
+                    return
+                }
+                viewModels.append(
+                    .follow(
+                        viewModel: FollowNotificationCellViewModel(
+                            username: username,
+                            profilePictureURL: profilePictureUrl,
+                            isCurrentUserFollowing: isFollowing
+                        )
+                    )
+                )
+            }
+        })
+        
+        if viewModels.isEmpty {
+            noActivityLabel.isHidden = false
+            tableView.isHidden = true
+        }
+        else {
+            noActivityLabel.isHidden = true
+            tableView.isHidden = false
+            tableView.reloadData()
+        }
     }
     
     private func mockData() {
@@ -98,7 +169,7 @@ class NotificationsViewController: UIViewController {
         ]
         tableView.reloadData()
     }
-
+    
 }
 
 extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -140,7 +211,7 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
             cell.delegate = self
             return cell
         }
-     
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -161,17 +232,17 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
         // FixME: Update function to use username (the one bellow is for an email)
-//        DatabaseManager.shared.findUser(with: username) { [weak self] user in
-//            guard let user = user else {
-//                return
-//            }
-//            
-//            DispatchQueue.main.async {
-//                let vc = ProfileViewController(user: user)
-//                self?.navigationController?.pushViewController(vc, animated: true)
-//            }
-//
-//        }
+        //        DatabaseManager.shared.findUser(with: username) { [weak self] user in
+        //            guard let user = user else {
+        //                return
+        //            }
+        //
+        //            DispatchQueue.main.async {
+        //                let vc = ProfileViewController(user: user)
+        //                self?.navigationController?.pushViewController(vc, animated: true)
+        //            }
+        //
+        //        }
         
     }
     
@@ -185,12 +256,12 @@ extension NotificationsViewController: FollowNotificationTableViewCellDelegate, 
                                          didTapButton isFollowing: Bool,
                                          viewModel: FollowNotificationCellViewModel) {
         let username = viewModel.username
-//        DatabaseManager.shared.updateRelationship(
-//            state: isFollowing ? .follow : .unfollow,
-//            for: username
-//        ) { success in
-//
-//        }
+        //        DatabaseManager.shared.updateRelationship(
+        //            state: isFollowing ? .follow : .unfollow,
+        //            for: username
+        //        ) { success in
+        //
+        //        }
     }
     
     func likeNotificationTableViewCell(_ cell: LikeNotificationTableViewCell,

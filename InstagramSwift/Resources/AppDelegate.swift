@@ -23,6 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
+        //Add  dummy notification for current user
+//        let id = NotificationsManager.newIdentifier()
+//        let model = IGNotification(
+//            identifier: id,
+//            notificationType: 1,
+//            profilePictureUrl: "https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+//            username: "elonmusk",
+//            dateString: String.date(with: Date()),
+//            isFollowing: nil,
+//            postId: "1234",
+//            postUrl: "https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg")
+//        NotificationsManager.shared.create(notification: model, for: "test")
         
         return true
         
