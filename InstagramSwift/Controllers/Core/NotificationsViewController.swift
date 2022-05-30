@@ -237,18 +237,22 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
             username = viewModel.username
         }
         
-        // FixME: Update function to use username (the one bellow is for an email)
-        //        DatabaseManager.shared.findUser(with: username) { [weak self] user in
-        //            guard let user = user else {
-        //                return
-        //            }
-        //
-        //            DispatchQueue.main.async {
-        //                let vc = ProfileViewController(user: user)
-        //                self?.navigationController?.pushViewController(vc, animated: true)
-        //            }
-        //
-        //        }
+        DatabaseManager.shared.findUser(username: username) { [weak self] user in
+            guard let user = user else {
+                let alert = UIAlertController(title: "Woops",
+                                              message: "User doesn't exist",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                self?.present(alert, animated: true)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                let vc = ProfileViewController(user: user)
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+        }
         
     }
     
@@ -262,12 +266,20 @@ extension NotificationsViewController: FollowNotificationTableViewCellDelegate, 
                                          didTapButton isFollowing: Bool,
                                          viewModel: FollowNotificationCellViewModel) {
         let username = viewModel.username
-        //        DatabaseManager.shared.updateRelationship(
-        //            state: isFollowing ? .follow : .unfollow,
-        //            for: username
-        //        ) { success in
-        //
-        //        }
+        DatabaseManager.shared.updateRelationship(
+            state: isFollowing ? .follow : .unfollow,
+            for: username
+        ) { [weak self] success in
+            if !success {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Woops",
+                                                  message: "Unable to perform action.",
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
     }
     
     func likeNotificationTableViewCell(_ cell: LikeNotificationTableViewCell,
@@ -314,6 +326,27 @@ extension NotificationsViewController: FollowNotificationTableViewCellDelegate, 
         let username = username
         guard let postID = model.postId else {
             return
+        }
+        
+        // Find post by id from target user
+        DatabaseManager.shared.getPost(
+            with: postID,
+            from: username
+        ) { [weak self] post in
+            
+            DispatchQueue.main.async {
+                guard let post = post else {
+                    let alert = UIAlertController(title: "Oops",
+                                                  message: "We are unable to open this post.",
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self?.present(alert, animated: true)
+                    return
+                }
+                
+                let vc = PostViewController(post: post)
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
     
