@@ -16,6 +16,8 @@
 		DF20D4F3283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */; };
 		DF20D4F5283785F1000208C7 /* HomeFeedCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */; };
 		DF3568F1283B868100F243AC /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3568F0283B868100F243AC /* PostEditViewController.swift */; };
+		DF39AC12284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */; };
+		DF39AC1628462AA700CF368D /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39AC1528462AA700CF368D /* ProfileHeaderViewModel.swift */; };
 		DF767AA82841326D00AB2E59 /* NotificationCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF767AA72841326D00AB2E59 /* NotificationCellType.swift */; };
 		DF767AAA2841330F00AB2E59 /* NotificationCellViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF767AA92841330F00AB2E59 /* NotificationCellViewModels.swift */; };
 		DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81902828323F24007E9902 /* SignInHeaderView.swift */; };
@@ -73,6 +75,8 @@
 		DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDatetimeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCellType.swift; sourceTree = "<group>"; };
 		DF3568F0283B868100F243AC /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
+		DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DF39AC1528462AA700CF368D /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		DF767AA72841326D00AB2E59 /* NotificationCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellType.swift; sourceTree = "<group>"; };
 		DF767AA92841330F00AB2E59 /* NotificationCellViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellViewModels.swift; sourceTree = "<group>"; };
 		DF81902828323F24007E9902 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 				DF81902828323F24007E9902 /* SignInHeaderView.swift */,
 				DF9C10392832AC5A007D425B /* IGTextField.swift */,
 				DFB2E101283BDDE200BF0B72 /* PhotoCollectionViewCell.swift */,
+				DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				DF20D4F028378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift */,
 				DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */,
 				DF767AA92841330F00AB2E59 /* NotificationCellViewModels.swift */,
+				DF39AC1528462AA700CF368D /* ProfileHeaderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 				DFDB604F2831594C0039F24B /* CaptionViewController.swift in Sources */,
 				DFB7E1442837F6A20089F48C /* PostLikesCollectionViewCell.swift in Sources */,
 				DFDB6048283158C60039F24B /* TabBarViewController.swift in Sources */,
+				DF39AC12284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				DFDB605E28315A8F0039F24B /* Notification.swift in Sources */,
 				DFD9FA9B283FF82900ED7301 /* NotificationsManager.swift in Sources */,
 				DFDB606428315B090039F24B /* StorageManager.swift in Sources */,
@@ -463,6 +470,7 @@
 				DF20D4F128378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
 				DF3568F1283B868100F243AC /* PostEditViewController.swift in Sources */,
 				DFD9FA97283FF63600ED7301 /* LikeNotificationTableViewCell.swift in Sources */,
+				DF39AC1628462AA700CF368D /* ProfileHeaderViewModel.swift in Sources */,
 				DFDB606028315AC10039F24B /* AuthManager.swift in Sources */,
 				DFDB604B283159000039F24B /* SignInViewController.swift in Sources */,
 				DF81902B28324116007E9902 /* Extensions.swift in Sources */,
