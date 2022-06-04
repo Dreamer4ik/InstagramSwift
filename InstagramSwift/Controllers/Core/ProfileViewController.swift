@@ -36,6 +36,7 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .systemBackground
         configureNavBar()
         configureCollectionView()
+        fetchProfileInfo()
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,6 +56,24 @@ class ProfileViewController: UIViewController {
     @objc private func didTapSettings() {
         let vc = SettingsViewController()
         present(UINavigationController(rootViewController: vc), animated: true)
+    }
+    
+    private func fetchProfileInfo() {
+        // Counts (3)
+        
+        
+        // Bio, name
+        
+        
+        // Profile picture url
+        StorageManager.shared.profilePictureURL(for: user.username) { url in
+            
+        }
+        
+        // if profile is not for current user
+        if !isCurrentUser {
+            //get follow state
+        }
     }
     
 }
@@ -83,7 +102,17 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         ) as? ProfileHeaderCollectionReusableView else {
             return UICollectionReusableView()
         }
-//        headerView.configure(with: ProfileHeaderViewModel)
+        let viewModel = ProfileHeaderViewModel(
+            profilePictureUrl: nil,
+            followerCount: 200,
+            followingCount: 120,
+            postCount: 45,
+            buttonType: self.isCurrentUser ? .edit : .follow(isFollowing: true),
+            name: "Dreamer",
+            bio: "This is first profile for test"
+        )
+        headerView.configure(with: viewModel)
+        headerView.countContainerView.delegate = self
         return headerView
     }
     
@@ -94,6 +123,32 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 //        navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension ProfileViewController: ProfileHeaderCountViewDelegate {
+    func profileHeaderCountViewDidTapFollowers(_ containerView: ProfileHeaderCountView) {
+        
+    }
+    
+    func profileHeaderCountViewDidTapFollowing(_ containerView: ProfileHeaderCountView) {
+        
+    }
+    
+    func profileHeaderCountViewDidTapPosts(_ containerView: ProfileHeaderCountView) {
+        
+    }
+    
+    func profileHeaderCountViewDidTapEditProfile(_ containerView: ProfileHeaderCountView) {
+        
+    }
+    
+    func profileHeaderCountViewDidTapFollow(_ containerView: ProfileHeaderCountView) {
+        
+    }
+    
+    func profileHeaderCountViewDidTapUnfollow(_ containerView: ProfileHeaderCountView) {
+        
+    } 
 }
 
 extension ProfileViewController {

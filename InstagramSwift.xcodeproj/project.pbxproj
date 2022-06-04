@@ -61,6 +61,8 @@
 		DFDB606628315B310039F24B /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606528315B310039F24B /* AnalyticsManager.swift */; };
 		DFDB606828315B530039F24B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606728315B530039F24B /* HapticsManager.swift */; };
 		DFDB606A28315E680039F24B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFDB606928315E680039F24B /* GoogleService-Info.plist */; };
+		DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */; };
+		DFF13B77284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +124,8 @@
 		DFDB606528315B310039F24B /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		DFDB606728315B530039F24B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		DFDB606928315E680039F24B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountView.swift; sourceTree = "<group>"; };
+		DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,7 @@
 				DF9C10392832AC5A007D425B /* IGTextField.swift */,
 				DFB2E101283BDDE200BF0B72 /* PhotoCollectionViewCell.swift */,
 				DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */,
+				DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */,
 				DF767AA92841330F00AB2E59 /* NotificationCellViewModels.swift */,
 				DF39AC1528462AA700CF368D /* ProfileHeaderViewModel.swift */,
+				DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 				DFDB604F2831594C0039F24B /* CaptionViewController.swift in Sources */,
 				DFB7E1442837F6A20089F48C /* PostLikesCollectionViewCell.swift in Sources */,
 				DFDB6048283158C60039F24B /* TabBarViewController.swift in Sources */,
+				DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */,
 				DF39AC12284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				DFDB605E28315A8F0039F24B /* Notification.swift in Sources */,
 				DFD9FA9B283FF82900ED7301 /* NotificationsManager.swift in Sources */,
@@ -460,6 +467,7 @@
 				DFDB6044283158580039F24B /* NotificationsViewController.swift in Sources */,
 				DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */,
 				DFDB6056283159E10039F24B /* SettingsViewController.swift in Sources */,
+				DFF13B77284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift in Sources */,
 				DFCF96EF283EA2EC00AF437A /* SearchResultsViewController.swift in Sources */,
 				DF9C103A2832AC5A007D425B /* IGTextField.swift in Sources */,
 				DF20D4E92837825D000208C7 /* PostCollectionViewCellViewModel.swift in Sources */,
