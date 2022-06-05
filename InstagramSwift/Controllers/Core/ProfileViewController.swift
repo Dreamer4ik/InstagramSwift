@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController {
     
     private var headerViewModel: ProfileHeaderViewModel?
     
+    private var posts: [Post] = []
+    
     // MARK: - Init
     
     init(user: User) {
@@ -34,7 +36,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = user.username.capitalized
+        navigationItem.title = user.username.capitalized
+        tabBarItem.title = "Profile"
         view.backgroundColor = .systemBackground
         configureNavBar()
         configureCollectionView()
@@ -61,6 +64,23 @@ class ProfileViewController: UIViewController {
     }
     
     private func fetchProfileInfo() {
+        let group = DispatchGroup()
+        
+        // Fetch posts
+        group.enter()
+        DatabaseManager.shared.posts(for: user.username) { [weak self] result in
+            defer {
+                group.leave()
+            }
+            switch result {
+            case .success(let posts):
+                self?.posts = posts
+            case .failure(_):
+                break
+            }
+        }
+        
+        // Fetch Profile Header
         var profilePictureUrl: URL?
         var buttonType: ProfileButtonType = .edit
         var followers = 0
@@ -68,8 +88,6 @@ class ProfileViewController: UIViewController {
         var posts = 0
         var name: String?
         var bio: String?
-        
-        let group = DispatchGroup()
         
         // Counts (3)
         group.enter()
@@ -106,6 +124,9 @@ class ProfileViewController: UIViewController {
             //get follow state
             group.enter()
             DatabaseManager.shared.isFollowing(targetUsername: user.username) { isFollowing in
+                defer {
+                    group.leave()
+                }
                 buttonType = .follow(isFollowing: isFollowing)
             }
         }
@@ -128,7 +149,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -138,7 +159,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         ) as? PhotoCollectionViewCell else {
             fatalError()
         }
-        cell.configure(with: UIImage(named: "test"))
+        cell.configure(with: URL(string: posts[indexPath.row].postUrlString))
         return cell
     }
     
@@ -159,9 +180,9 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-//        let post = posts[indexPath.row]
-//        let vc = PostViewController(post: post)
-//        navigationController?.pushViewController(vc, animated: true)
+        let post = posts[indexPath.row]
+        let vc = PostViewController(post: post)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
