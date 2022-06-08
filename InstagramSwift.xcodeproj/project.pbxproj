@@ -16,6 +16,7 @@
 		DF20D4F3283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */; };
 		DF20D4F5283785F1000208C7 /* HomeFeedCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */; };
 		DF3568F1283B868100F243AC /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3568F0283B868100F243AC /* PostEditViewController.swift */; };
+		DF37E38D28511F4600FC36E7 /* IGFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF37E38C28511F4600FC36E7 /* IGFollowButton.swift */; };
 		DF39AC12284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */; };
 		DF39AC1628462AA700CF368D /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39AC1528462AA700CF368D /* ProfileHeaderViewModel.swift */; };
 		DF767AA82841326D00AB2E59 /* NotificationCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF767AA72841326D00AB2E59 /* NotificationCellType.swift */; };
@@ -79,6 +80,7 @@
 		DF20D4F2283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDatetimeCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCellType.swift; sourceTree = "<group>"; };
 		DF3568F0283B868100F243AC /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
+		DF37E38C28511F4600FC36E7 /* IGFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFollowButton.swift; sourceTree = "<group>"; };
 		DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		DF39AC1528462AA700CF368D /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		DF767AA72841326D00AB2E59 /* NotificationCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellType.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				DFB2E101283BDDE200BF0B72 /* PhotoCollectionViewCell.swift */,
 				DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */,
 				DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */,
+				DF37E38C28511F4600FC36E7 /* IGFollowButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				DF39AC12284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				DFDB605E28315A8F0039F24B /* Notification.swift in Sources */,
 				DFD9FA9B283FF82900ED7301 /* NotificationsManager.swift in Sources */,
+				DF37E38D28511F4600FC36E7 /* IGFollowButton.swift in Sources */,
 				DFDB606428315B090039F24B /* StorageManager.swift in Sources */,
 				DF767AA82841326D00AB2E59 /* NotificationCellType.swift in Sources */,
 				DFDB6052283159B10039F24B /* ListViewController.swift in Sources */,

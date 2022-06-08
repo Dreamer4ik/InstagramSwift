@@ -291,7 +291,7 @@ final class DatabaseManager {
             .collection("followers")
             .document(currentUsername)
         ref.getDocument { snapshot, error in
-            guard snapshot != nil, error == nil else {
+            guard snapshot?.data() != nil, error == nil else {
                 // Not following
                 completion(false)
                 return
