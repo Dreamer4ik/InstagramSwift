@@ -14,6 +14,10 @@ struct Post: Codable {
     let postUrlString: String
     var likers: [String]
     
+    var date: Date {
+        return DateFormatter.defaultFormatter.date(from: postedDate) ?? Date()
+    }
+    
     var storageReference: String? {
         guard let username = UserDefaults.standard.string(forKey: "username") else {
             return nil
