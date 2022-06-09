@@ -64,6 +64,8 @@
 		DFDB606628315B310039F24B /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606528315B310039F24B /* AnalyticsManager.swift */; };
 		DFDB606828315B530039F24B /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606728315B530039F24B /* HapticsManager.swift */; };
 		DFDB606A28315E680039F24B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFDB606928315E680039F24B /* GoogleService-Info.plist */; };
+		DFE717C52851F9B100555E01 /* ListUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */; };
+		DFE717C72851FC6A00555E01 /* ListUserTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */; };
 		DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */; };
 		DFF13B77284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,8 @@
 		DFDB606528315B310039F24B /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		DFDB606728315B530039F24B /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		DFDB606928315E680039F24B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCell.swift; sourceTree = "<group>"; };
+		DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountView.swift; sourceTree = "<group>"; };
 		DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +235,7 @@
 				DF39AC11284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift */,
 				DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */,
 				DF37E38C28511F4600FC36E7 /* IGFollowButton.swift */,
+				DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				DF767AA92841330F00AB2E59 /* NotificationCellViewModels.swift */,
 				DF39AC1528462AA700CF368D /* ProfileHeaderViewModel.swift */,
 				DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */,
+				DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				DFDB604D283159180039F24B /* SignUpViewController.swift in Sources */,
 				DF767AAA2841330F00AB2E59 /* NotificationCellViewModels.swift in Sources */,
 				DF20D4E7283781A1000208C7 /* PosterCollectionViewCellViewModel.swift in Sources */,
+				DFE717C72851FC6A00555E01 /* ListUserTableViewCellViewModel.swift in Sources */,
 				DFDB605828315A2E0039F24B /* User.swift in Sources */,
 				DFDB6044283158580039F24B /* NotificationsViewController.swift in Sources */,
 				DF81902928323F24007E9902 /* SignInHeaderView.swift in Sources */,
@@ -486,6 +493,7 @@
 				DFDB606228315AE80039F24B /* DatabaseManager.swift in Sources */,
 				DFDB605C28315A6C0039F24B /* Relationship.swift in Sources */,
 				DFDB605A28315A3F0039F24B /* Post.swift in Sources */,
+				DFE717C52851F9B100555E01 /* ListUserTableViewCell.swift in Sources */,
 				DF20D4F128378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
 				DF3568F1283B868100F243AC /* PostEditViewController.swift in Sources */,
 				DFD9FA97283FF63600ED7301 /* LikeNotificationTableViewCell.swift in Sources */,

@@ -28,7 +28,8 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
-        title = "Take Photo"
+        navigationItem.title = "Take Photo"
+        tabBarItem.title = "Camera"
         view.addSubview(cameraView)
         view.addSubview(cameraButton)
         setUpNavBar()
