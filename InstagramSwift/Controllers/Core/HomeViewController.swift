@@ -187,7 +187,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 fatalError()
             }
             cell.delegate = self
-            cell.configure(with: viewModel)
+            cell.configure(with: viewModel, index: indexPath.section)
             return cell
         case .post(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -205,7 +205,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 fatalError()
             }
             cell.delegate = self
-            cell.configure(with: viewModel)
+            cell.configure(with: viewModel, index: indexPath.section)
             return cell
         case .likeCount(let viewModel):
             guard let cell = collectionView.dequeueReusableCell(
@@ -239,13 +239,27 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension HomeViewController: PosterCollectionViewCellDelegate {
-    func posterCollectionViewCellDidTapMore(_ cell: PosterCollectionViewCell) {
+    func posterCollectionViewCellDidTapMore(_ cell: PosterCollectionViewCell, index: Int) {
         let sheet = UIAlertController(title: "Post Actions",
                                       message: nil,
                                       preferredStyle: .actionSheet)
         sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        sheet.addAction(UIAlertAction(title: "Share Post", style: .default, handler: { _ in
-            
+        sheet.addAction(UIAlertAction(title: "Share Post", style: .default, handler: { [weak self] _ in
+            DispatchQueue.main.async {
+                let section = self?.viewModels[index] ?? []
+                section.forEach({ cellType in
+                    switch cellType {
+                    case .post(let viewModel):
+                        let vc = UIActivityViewController(
+                            activityItems: ["Check out this cool post!", viewModel.postURL],
+                            applicationActivities: []
+                        )
+                        self?.present(vc, animated: true, completion: nil)
+                    default:
+                        break
+                    }
+                })
+            }
         }))
         sheet.addAction(UIAlertAction(title: "Report Post", style: .destructive, handler: { _ in
             
@@ -267,21 +281,32 @@ extension HomeViewController: PostCollectionViewCellDelegate {
 }
 
 extension HomeViewController: PostActionsCollectionViewCellDelegate {
-    func postActionsCollectionViewCellDidTapLike(_ cell: PostActionsCollectionViewCell, isLiked: Bool) {
+    func postActionsCollectionViewCellDidTapLike(_ cell: PostActionsCollectionViewCell, isLiked: Bool, index: Int) {
         // Call DB to update like state
         print("DidTapLike")
     }
     
-    func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell) {
+    func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell, index: Int) {
         //        let vc = PostViewController()
         //        vc.title = "Post"
         //        navigationController?.pushViewController(vc, animated: true)
     }
     
-    func postActionsCollectionViewCellDidTapShare(_ cell: PostActionsCollectionViewCell) {
-        let vc = UIActivityViewController(activityItems: ["Sharing from Instagram"],
-                                          applicationActivities: [])
-        present(vc, animated: true, completion: nil)
+    func postActionsCollectionViewCellDidTapShare(_ cell: PostActionsCollectionViewCell, index: Int) {
+        let section = viewModels[index]
+        section.forEach({ cellType in
+            switch cellType {
+            case .post(let viewModel):
+                let vc = UIActivityViewController(
+                    activityItems: ["Check out this cool post!", viewModel.postURL],
+                    applicationActivities: []
+                )
+                present(vc, animated: true, completion: nil)
+            default:
+                break
+            }
+        })
+        
     }
     
     
