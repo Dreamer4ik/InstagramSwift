@@ -79,3 +79,7 @@ extension String {
         return DateFormatter.defaultFormatter.string(from: date)
     }
 }
+
+extension Notification.Name {
+    static let didPostNotification = Notification.Name("didPostNotification")
+}

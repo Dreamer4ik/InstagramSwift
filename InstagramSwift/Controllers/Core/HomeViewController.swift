@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     
     private var viewModels = [[HomeFeedCellType]]()
     
+    private var observer: NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,15 @@ class HomeViewController: UIViewController {
         configureCollectionView()
         fetchPosts()
         //        createMockData()
+        
+        observer = NotificationCenter.default.addObserver(
+            forName: .didPostNotification,
+            object: nil,
+            queue: .main,
+            using: { [weak self] _ in
+                self?.viewModels.removeAll()
+                self?.fetchPosts()
+            })
     }
     
     override func viewDidLayoutSubviews() {
