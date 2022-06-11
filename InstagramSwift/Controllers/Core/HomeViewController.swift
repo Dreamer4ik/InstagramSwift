@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     
     private var observer: NSObjectProtocol?
     
+    private var allPosts: [(post: Post, owner: String)] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +79,7 @@ class HomeViewController: UIViewController {
         }
         userGroup.notify(queue: .main) {
             let group = DispatchGroup()
+            self.allPosts = allPosts
             allPosts.forEach({ model in
                 group.enter()
                 self.createViewModel(
@@ -93,13 +96,19 @@ class HomeViewController: UIViewController {
             })
             
             group.notify(queue: .main) {
-                self.sortViewModels()
+                self.sortData()
                 self.collectionView?.reloadData()
             }
         }
     }
    
-    private func sortViewModels() {
+    private func sortData() {
+        allPosts = allPosts.sorted(by: { first, second in
+            let date1 = first.post.date
+            let date2 = second.post.date
+            return date1 > date2
+        })
+        
         self.viewModels = self.viewModels.sorted(by: { first, second in
             var date1: Date?
             var date2: Date?
@@ -127,6 +136,7 @@ class HomeViewController: UIViewController {
             }
             return false
         })
+        
     }
     
     private func createViewModel(model: Post, username: String ,completion: @escaping (Bool) -> Void) {
@@ -287,9 +297,10 @@ extension HomeViewController: PostActionsCollectionViewCellDelegate {
     }
     
     func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell, index: Int) {
-        //        let vc = PostViewController()
-        //        vc.title = "Post"
-        //        navigationController?.pushViewController(vc, animated: true)
+        let tuple = allPosts[index]
+        let vc = PostViewController(post: tuple.post, owner: tuple.owner)
+        vc.title = "Post"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func postActionsCollectionViewCellDidTapShare(_ cell: PostActionsCollectionViewCell, index: Int) {

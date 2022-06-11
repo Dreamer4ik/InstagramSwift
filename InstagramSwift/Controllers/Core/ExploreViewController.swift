@@ -76,7 +76,7 @@ class ExploreViewController: UIViewController {
         return collectionView
     }()
     
-    private var posts = [Post]()
+    private var posts = [(post: Post, user: User)]()
     
     // MARK: - Lifecycle
     
@@ -147,14 +147,14 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
             fatalError()
         }
         let model = posts[indexPath.row]
-        cell.configure(with: URL(string: model.postUrlString))
+        cell.configure(with: URL(string: model.post.postUrlString))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let post = posts[indexPath.row]
-        let vc = PostViewController(post: post)
+        let model = posts[indexPath.row]
+        let vc = PostViewController(post: model.post, owner: model.user.username)
         navigationController?.pushViewController(vc, animated: true)
     }
     

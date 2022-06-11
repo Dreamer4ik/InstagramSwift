@@ -67,6 +67,7 @@
 		DFE717C52851F9B100555E01 /* ListUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */; };
 		DFE717C72851FC6A00555E01 /* ListUserTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */; };
 		DFF0061E2854898B00165F38 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0061D2854898B00165F38 /* SettingsModels.swift */; };
+		DFF0BBBD285510E40060680C /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0BBBC285510E40060680C /* CommentCollectionViewCell.swift */; };
 		DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */; };
 		DFF13B77284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -136,6 +137,7 @@
 		DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCell.swift; sourceTree = "<group>"; };
 		DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		DFF0061D2854898B00165F38 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		DFF0BBBC285510E40060680C /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountView.swift; sourceTree = "<group>"; };
 		DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +240,7 @@
 				DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */,
 				DF37E38C28511F4600FC36E7 /* IGFollowButton.swift */,
 				DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */,
+				DFF0BBBC285510E40060680C /* CommentCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				DFDB606028315AC10039F24B /* AuthManager.swift in Sources */,
 				DFDB604B283159000039F24B /* SignInViewController.swift in Sources */,
 				DF81902B28324116007E9902 /* Extensions.swift in Sources */,
+				DFF0BBBD285510E40060680C /* CommentCollectionViewCell.swift in Sources */,
 				DF20D4EB283782F2000208C7 /* PostActionsCollectionViewCellViewModel.swift in Sources */,
 				DF20D4F3283784BE000208C7 /* PostDatetimeCollectionViewCellViewModel.swift in Sources */,
 				DF20D4F5283785F1000208C7 /* HomeFeedCellType.swift in Sources */,
