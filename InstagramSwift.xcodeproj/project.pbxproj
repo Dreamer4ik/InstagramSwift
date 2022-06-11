@@ -66,6 +66,7 @@
 		DFDB606A28315E680039F24B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFDB606928315E680039F24B /* GoogleService-Info.plist */; };
 		DFE717C52851F9B100555E01 /* ListUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */; };
 		DFE717C72851FC6A00555E01 /* ListUserTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */; };
+		DFF0061E2854898B00165F38 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0061D2854898B00165F38 /* SettingsModels.swift */; };
 		DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */; };
 		DFF13B77284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -134,6 +135,7 @@
 		DFDB606928315E680039F24B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCell.swift; sourceTree = "<group>"; };
 		DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		DFF0061D2854898B00165F38 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountView.swift; sourceTree = "<group>"; };
 		DFF13B76284B605A007DA2EA /* ProfileHeaderCountViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +252,7 @@
 				DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */,
 				DF767AA72841326D00AB2E59 /* NotificationCellType.swift */,
 				DFB7984A284BDAD2001433FC /* UserInfo.swift */,
+				DFF0061D2854898B00165F38 /* SettingsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			files = (
 				DFDB604F2831594C0039F24B /* CaptionViewController.swift in Sources */,
 				DFB7E1442837F6A20089F48C /* PostLikesCollectionViewCell.swift in Sources */,
+				DFF0061E2854898B00165F38 /* SettingsModels.swift in Sources */,
 				DFDB6048283158C60039F24B /* TabBarViewController.swift in Sources */,
 				DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */,
 				DF39AC12284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift in Sources */,
