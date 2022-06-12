@@ -56,7 +56,6 @@
 		DFDB6056283159E10039F24B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB6055283159E10039F24B /* SettingsViewController.swift */; };
 		DFDB605828315A2E0039F24B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605728315A2E0039F24B /* User.swift */; };
 		DFDB605A28315A3F0039F24B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605928315A3F0039F24B /* Post.swift */; };
-		DFDB605C28315A6C0039F24B /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605B28315A6C0039F24B /* Relationship.swift */; };
 		DFDB605E28315A8F0039F24B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605D28315A8F0039F24B /* Notification.swift */; };
 		DFDB606028315AC10039F24B /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB605F28315AC10039F24B /* AuthManager.swift */; };
 		DFDB606228315AE80039F24B /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB606128315AE80039F24B /* DatabaseManager.swift */; };
@@ -66,6 +65,8 @@
 		DFDB606A28315E680039F24B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFDB606928315E680039F24B /* GoogleService-Info.plist */; };
 		DFE717C52851F9B100555E01 /* ListUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */; };
 		DFE717C72851FC6A00555E01 /* ListUserTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */; };
+		DFEF3E702855E3C900307A62 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF3E6F2855E3C900307A62 /* Comment.swift */; };
+		DFEF3E722855E7DA00307A62 /* CommentBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF3E712855E7DA00307A62 /* CommentBarView.swift */; };
 		DFF0061E2854898B00165F38 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0061D2854898B00165F38 /* SettingsModels.swift */; };
 		DFF0BBBD285510E40060680C /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0BBBC285510E40060680C /* CommentCollectionViewCell.swift */; };
 		DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */; };
@@ -126,7 +127,6 @@
 		DFDB6055283159E10039F24B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DFDB605728315A2E0039F24B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DFDB605928315A3F0039F24B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		DFDB605B28315A6C0039F24B /* Relationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
 		DFDB605D28315A8F0039F24B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		DFDB605F28315AC10039F24B /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		DFDB606128315AE80039F24B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -136,6 +136,8 @@
 		DFDB606928315E680039F24B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCell.swift; sourceTree = "<group>"; };
 		DFE717C62851FC6A00555E01 /* ListUserTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		DFEF3E6F2855E3C900307A62 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		DFEF3E712855E7DA00307A62 /* CommentBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentBarView.swift; sourceTree = "<group>"; };
 		DFF0061D2854898B00165F38 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		DFF0BBBC285510E40060680C /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFF13B74284B5963007DA2EA /* ProfileHeaderCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCountView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				DF37E38C28511F4600FC36E7 /* IGFollowButton.swift */,
 				DFE717C42851F9B100555E01 /* ListUserTableViewCell.swift */,
 				DFF0BBBC285510E40060680C /* CommentCollectionViewCell.swift */,
+				DFEF3E712855E7DA00307A62 /* CommentBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,12 +253,12 @@
 			children = (
 				DFDB605728315A2E0039F24B /* User.swift */,
 				DFDB605928315A3F0039F24B /* Post.swift */,
-				DFDB605B28315A6C0039F24B /* Relationship.swift */,
 				DFDB605D28315A8F0039F24B /* Notification.swift */,
 				DF20D4F4283785F1000208C7 /* HomeFeedCellType.swift */,
 				DF767AA72841326D00AB2E59 /* NotificationCellType.swift */,
 				DFB7984A284BDAD2001433FC /* UserInfo.swift */,
 				DFF0061D2854898B00165F38 /* SettingsModels.swift */,
+				DFEF3E6F2855E3C900307A62 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				DFDB6048283158C60039F24B /* TabBarViewController.swift in Sources */,
 				DFF13B75284B5963007DA2EA /* ProfileHeaderCountView.swift in Sources */,
 				DF39AC12284629AD00CF368D /* ProfileHeaderCollectionReusableView.swift in Sources */,
+				DFEF3E722855E7DA00307A62 /* CommentBarView.swift in Sources */,
 				DFDB605E28315A8F0039F24B /* Notification.swift in Sources */,
 				DFD9FA9B283FF82900ED7301 /* NotificationsManager.swift in Sources */,
 				DF37E38D28511F4600FC36E7 /* IGFollowButton.swift in Sources */,
@@ -498,7 +502,6 @@
 				DF20D4E92837825D000208C7 /* PostCollectionViewCellViewModel.swift in Sources */,
 				DF20D4EF283783C2000208C7 /* PostLikesCollectionViewCellViewModel.swift in Sources */,
 				DFDB606228315AE80039F24B /* DatabaseManager.swift in Sources */,
-				DFDB605C28315A6C0039F24B /* Relationship.swift in Sources */,
 				DFDB605A28315A3F0039F24B /* Post.swift in Sources */,
 				DFE717C52851F9B100555E01 /* ListUserTableViewCell.swift in Sources */,
 				DF20D4F128378454000208C7 /* PostCaptionCollectionViewCellViewModel.swift in Sources */,
@@ -517,6 +520,7 @@
 				DFDB6046283158860039F24B /* ProfileViewController.swift in Sources */,
 				DFB2E102283BDDE200BF0B72 /* PhotoCollectionViewCell.swift in Sources */,
 				DFDB606828315B530039F24B /* HapticsManager.swift in Sources */,
+				DFEF3E702855E3C900307A62 /* Comment.swift in Sources */,
 				DFB7E13E2837F4F00089F48C /* PosterCollectionViewCell.swift in Sources */,
 				DFDB6025283152CD0039F24B /* AppDelegate.swift in Sources */,
 				DFDB6027283152CD0039F24B /* SceneDelegate.swift in Sources */,
