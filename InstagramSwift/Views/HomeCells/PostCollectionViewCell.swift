@@ -54,6 +54,8 @@ class PostCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func didDoubleTapToLike() {
+        // FixMe
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "doubleTap"), object: nil)
         heartImageView.isHidden = false
         UIView.animate(withDuration: 0.4) {
             self.heartImageView.alpha = 1
