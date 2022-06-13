@@ -8,13 +8,15 @@
 import UIKit
 
 protocol PostLikesCollectionViewCellDelegate: AnyObject {
-    func postLikesCollectionViewCellLikeCount(_ cell: PostLikesCollectionViewCell)
+    func postLikesCollectionViewCellLikeCount(_ cell: PostLikesCollectionViewCell, index: Int)
 }
 
 class PostLikesCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "PostLikesCollectionViewCell"
     weak var delegate: PostLikesCollectionViewCellDelegate?
+    
+    private var index = 0
     
     private let label: UILabel = {
         let label = UILabel()
@@ -37,7 +39,7 @@ class PostLikesCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func didTapLabel() {
-        delegate?.postLikesCollectionViewCellLikeCount(self)
+        delegate?.postLikesCollectionViewCellLikeCount(self, index: index)
     }
     
     override func layoutSubviews() {
@@ -50,7 +52,8 @@ class PostLikesCollectionViewCell: UICollectionViewCell {
         label.text = nil
     }
     
-    func configure(with viewModel: PostLikesCollectionViewCellViewModel) {
+    func configure(with viewModel: PostLikesCollectionViewCellViewModel, index: Int) {
+        self.index = index
         let users = viewModel.likers
         label.text = "\(users.count) Likes"
     }

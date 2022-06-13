@@ -9,13 +9,15 @@ import UIKit
 import SDWebImage
 
 protocol PostCollectionViewCellDelegate: AnyObject {
-    func postCollectionViewCellDidUpdateLike(_ cell: PostCollectionViewCell)
+    func postCollectionViewCellDidUpdateLike(_ cell: PostCollectionViewCell, index: Int)
 }
 
 class PostCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "PostCollectionViewCell"
     weak var delegate: PostCollectionViewCellDelegate?
+    
+    private var index = 0
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -67,7 +69,7 @@ class PostCollectionViewCell: UICollectionViewCell {
             }
         }
         
-        delegate?.postCollectionViewCellDidUpdateLike(self)
+        delegate?.postCollectionViewCellDidUpdateLike(self, index: index)
     }
     
     override func layoutSubviews() {
@@ -86,7 +88,8 @@ class PostCollectionViewCell: UICollectionViewCell {
         imageView.image = nil
     }
     
-    func configure(with viewModel: PostCollectionViewCellViewModel) {
+    func configure(with viewModel: PostCollectionViewCellViewModel, index: Int) {
+        self.index = index
         imageView.sd_setImage(with: viewModel.postURL, completed: nil)
     }
 }
