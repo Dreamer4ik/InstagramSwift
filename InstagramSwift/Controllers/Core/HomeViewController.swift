@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     private var viewModels = [[HomeFeedCellType]]()
     
     private var observer: NSObjectProtocol?
+    private var observerLike: NSObjectProtocol?
     
     private var allPosts: [(post: Post, owner: String)] = []
     
@@ -24,7 +25,6 @@ class HomeViewController: UIViewController {
         
         configureCollectionView()
         fetchPosts()
-        //        createMockData()
         
         observer = NotificationCenter.default.addObserver(
             forName: .didPostNotification,
@@ -261,16 +261,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionReusableView()
         }
         let viewModel = StoriesViewModel(stories: [
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
-            Story(username: "den", image: UIImage(named: "test")),
+            Story(username: "fairw", image: UIImage(named: "person5")),
+            Story(username: "marina432", image: UIImage(named: "person9")),
+            Story(username: "afraz", image: UIImage(named: "person4")),
+            Story(username: "max02", image: UIImage(named: "person7")),
+            Story(username: "annuta", image: UIImage(named: "person3")),
+            Story(username: "den", image: UIImage(named: "person6")),
+            Story(username: "yeeevaaaaa", image: UIImage(named: "person1")),
+            Story(username: "makson3242", image: UIImage(named: "person8")),
+            Story(username: "elena12", image: UIImage(named: "person10")),
+            Story(username: "iri_rewe23", image: UIImage(named: "person2")),
             
         ])
         headerView.configure(with: viewModel)
