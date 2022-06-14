@@ -89,10 +89,10 @@ class PostActionsCollectionViewCell: UICollectionViewCell {
     }
     // FixMe
 //    @objc func forDoubleLike() {
-//        let image = UIImage(systemName: "suit.heart.fill",
+//        let image = UIImage(systemName: "suit.heart",
 //                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 44))
 //        likeButton.setImage(image, for: .normal)
-//        likeButton.tintColor = .systemRed
+//        likeButton.tintColor = .label
 //    }
     
     @objc func didTapComment() {

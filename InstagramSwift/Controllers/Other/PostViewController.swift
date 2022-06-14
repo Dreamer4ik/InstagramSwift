@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Appirater
 
 class PostViewController: UIViewController {
     
@@ -44,6 +45,7 @@ class PostViewController: UIViewController {
         commentBarView.delegate = self
         fetchPost()
         observeKeyboardChange()
+        Appirater.tryToShowPrompt()
     }
     
     override func viewDidLayoutSubviews() {
@@ -294,9 +296,16 @@ extension PostViewController: PosterCollectionViewCellDelegate {
         present(sheet, animated: true, completion: nil)
     }
     
-    func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell) {
-        let vc = ProfileViewController(user: User(username: "potus", email: "potus@gmail.com"))
-        navigationController?.pushViewController(vc, animated: true)
+    func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell, index: Int) {
+        DatabaseManager.shared.findUser(username: owner) { [weak self] user in
+            DispatchQueue.main.async {
+                guard let user = user else {
+                    return
+                }
+                let vc = ProfileViewController(user: user)
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 

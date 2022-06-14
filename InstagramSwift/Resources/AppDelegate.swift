@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Appirater
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        Appirater.appLaunched(true)
+        Appirater.setDebug(false)
+        Appirater.setAppId("1234781")
+        Appirater.setDaysUntilPrompt(7)
         FirebaseApp.configure()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
@@ -38,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
         
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        Appirater.appEnteredForeground(true)
     }
     
     // MARK: UISceneSession Lifecycle

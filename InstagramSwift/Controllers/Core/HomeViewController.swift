@@ -302,19 +302,29 @@ extension HomeViewController: PosterCollectionViewCellDelegate {
             }
         }))
         sheet.addAction(UIAlertAction(title: "Report Post", style: .destructive, handler: { _ in
-            
+            // Report
+            AnalyticsManager.shared.logFeedInteraction(.reported)
         }))
         present(sheet, animated: true, completion: nil)
     }
     
-    func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell) {
-        let vc = ProfileViewController(user: User(username: "potus", email: "potus@gmail.com"))
-        navigationController?.pushViewController(vc, animated: true)
+    func posterCollectionViewCellDidTapUsername(_ cell: PosterCollectionViewCell, index: Int) {
+        let username = allPosts[index].owner
+        DatabaseManager.shared.findUser(username: username) { [weak self] user in
+            DispatchQueue.main.async {
+                guard let user = user else {
+                    return
+                }
+                let vc = ProfileViewController(user: user)
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 
 extension HomeViewController: PostCollectionViewCellDelegate {
     func postCollectionViewCellDidUpdateLike(_ cell: PostCollectionViewCell, index: Int) {
+        AnalyticsManager.shared.logFeedInteraction(.doubleTapToLike)
         HapticsManager.shared.vibrateForSelection()
         let tuple = allPosts[index]
         DatabaseManager.shared.updateLikeState(
@@ -331,6 +341,7 @@ extension HomeViewController: PostCollectionViewCellDelegate {
 
 extension HomeViewController: PostActionsCollectionViewCellDelegate {
     func postActionsCollectionViewCellDidTapLike(_ cell: PostActionsCollectionViewCell, isLiked: Bool, index: Int) {
+        AnalyticsManager.shared.logFeedInteraction(.like)
         HapticsManager.shared.vibrateForSelection()
         let tuple = allPosts[index]
         DatabaseManager.shared.updateLikeState(
@@ -347,6 +358,7 @@ extension HomeViewController: PostActionsCollectionViewCellDelegate {
     }
     
     func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell, index: Int) {
+        AnalyticsManager.shared.logFeedInteraction(.comment)
         HapticsManager.shared.vibrateForSelection()
         let tuple = allPosts[index]
         let vc = PostViewController(post: tuple.post, owner: tuple.owner)
@@ -355,6 +367,7 @@ extension HomeViewController: PostActionsCollectionViewCellDelegate {
     }
     
     func postActionsCollectionViewCellDidTapShare(_ cell: PostActionsCollectionViewCell, index: Int) {
+        AnalyticsManager.shared.logFeedInteraction(.share)
         let section = viewModels[index]
         section.forEach({ cellType in
             switch cellType {

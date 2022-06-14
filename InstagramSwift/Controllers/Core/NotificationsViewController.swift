@@ -132,50 +132,6 @@ class NotificationsViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
-    private func mockData() {
-        tableView.isHidden = false
-        
-        guard let postUrl = URL(string: "https://images.pexels.com/photos/347141/pexels-photo-347141.jpeg") else {
-            return
-        }
-        
-        guard let iconUrl = URL(string: "https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") else {
-            return
-        }
-        
-        viewModels = [
-            .like(
-                viewModel: LikeNotificationCellViewModel(
-                    username: "eric",
-                    profilePictureURL: iconUrl,
-                    postURL: postUrl,
-                    date: "May 29"
-                )
-            ),
-            
-                .comment(
-                    viewModel: CommentNotificationCellViewModel(
-                        username: "jeff342342",
-                        profilePictureURL: iconUrl,
-                        postURL: postUrl,
-                        date: "May 29"
-                    )
-                ),
-            
-                .follow(viewModel:
-                            FollowNotificationCellViewModel(
-                                username: "kate",
-                                profilePictureURL: iconUrl,
-                                isCurrentUserFollowing: true,
-                                date: "May 29"
-                            )
-                       ),
-            
-        ]
-        tableView.reloadData()
-    }
-    
 }
 
 extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
