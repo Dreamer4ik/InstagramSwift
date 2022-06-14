@@ -62,13 +62,17 @@ class PostActionsCollectionViewCell: UICollectionViewCell {
         likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         commentButton.addTarget(self, action: #selector(didTapComment), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
-        // FixMe
+    
 //        NotificationCenter.default.addObserver(self, selector: #selector(forDoubleLike), name: NSNotification.Name(rawValue: "doubleTap"), object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    deinit {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "doubleTap"), object: nil)
+//    }
     
     @objc func didTapLike() {
         if self.isLiked {
@@ -87,12 +91,12 @@ class PostActionsCollectionViewCell: UICollectionViewCell {
         delegate?.postActionsCollectionViewCellDidTapLike(self, isLiked: !isLiked, index: index)
         self.isLiked = !isLiked
     }
-    // FixMe
+    
 //    @objc func forDoubleLike() {
-//        let image = UIImage(systemName: "suit.heart",
+//        let image = UIImage(systemName: "suit.heart.fill",
 //                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 44))
 //        likeButton.setImage(image, for: .normal)
-//        likeButton.tintColor = .label
+//        likeButton.tintColor = .systemRed
 //    }
     
     @objc func didTapComment() {
