@@ -163,10 +163,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    HapticsManager.shared.vibrateForType(for: .success)
                     let vc = TabBarViewController()
                     vc.modalPresentationStyle = .fullScreen
                     self?.present(vc, animated: true)
                 case .failure(let error):
+                    HapticsManager.shared.vibrateForType(for: .error)
                     print(error)
                 }
             }

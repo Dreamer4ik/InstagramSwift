@@ -315,6 +315,7 @@ extension HomeViewController: PosterCollectionViewCellDelegate {
 
 extension HomeViewController: PostCollectionViewCellDelegate {
     func postCollectionViewCellDidUpdateLike(_ cell: PostCollectionViewCell, index: Int) {
+        HapticsManager.shared.vibrateForSelection()
         let tuple = allPosts[index]
         DatabaseManager.shared.updateLikeState(
             state: .like,
@@ -330,6 +331,7 @@ extension HomeViewController: PostCollectionViewCellDelegate {
 
 extension HomeViewController: PostActionsCollectionViewCellDelegate {
     func postActionsCollectionViewCellDidTapLike(_ cell: PostActionsCollectionViewCell, isLiked: Bool, index: Int) {
+        HapticsManager.shared.vibrateForSelection()
         let tuple = allPosts[index]
         DatabaseManager.shared.updateLikeState(
             state: isLiked ? .like : .unlike,
@@ -339,10 +341,13 @@ extension HomeViewController: PostActionsCollectionViewCellDelegate {
                     print("Failed to like")
                     return
                 }
+                
+                print("tap: \(isLiked)")
             }
     }
     
     func postActionsCollectionViewCellDidTapComment(_ cell: PostActionsCollectionViewCell, index: Int) {
+        HapticsManager.shared.vibrateForSelection()
         let tuple = allPosts[index]
         let vc = PostViewController(post: tuple.post, owner: tuple.owner)
         vc.title = "Post"
@@ -371,6 +376,7 @@ extension HomeViewController: PostActionsCollectionViewCellDelegate {
 
 extension HomeViewController: PostLikesCollectionViewCellDelegate {
     func postLikesCollectionViewCellLikeCount(_ cell: PostLikesCollectionViewCell, index: Int) {
+        HapticsManager.shared.vibrateForSelection()
         let vc = ListViewController(type: .likers(usernames: allPosts[index].post.likers))
         navigationController?.pushViewController(vc, animated: true)
     }

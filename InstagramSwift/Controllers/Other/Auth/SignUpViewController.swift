@@ -224,12 +224,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let user):
+                    HapticsManager.shared.vibrateForType(for: .success)
                     UserDefaults.standard.setValue(user.email, forKey: "email")
                     UserDefaults.standard.setValue(user.username, forKey: "username")
                     
                     self?.navigationController?.popToRootViewController(animated: true)
                     self?.completion?()
                 case .failure(let error):
+                    HapticsManager.shared.vibrateForType(for: .error)
                     print("\n\nSign Up Error: \(error)")
                 }
             }
