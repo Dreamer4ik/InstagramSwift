@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     private var viewModels = [[HomeFeedCellType]]()
     
     private var observer: NSObjectProtocol?
+    private var observerLike: NSObjectProtocol?
     
     private var allPosts: [(post: Post, owner: String)] = []
     
